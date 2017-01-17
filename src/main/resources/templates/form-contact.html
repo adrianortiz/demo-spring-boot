@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"/>
+<title>Insert title here</title>
+</head>
+<body>
+
+	<h1>Nuevo Contacto</h1>
+	
+	<form action="#" th:action="@{/add-contact}" th:object="${contactModel}" method="post">
+		<input type="hidden" th:field="*{id}"/>
+		First Name: <input type="text" th:field="*{firstname}" th:value="${firstname}"/> <br/>
+		Last Name: <input type="text" th:field="*{lastname}" th:value="${lastname}"/> <br/>
+		Telephone: <input type="text" th:field="*{telephone}" th:value="${telephone}"/> <br/>
+		City: <input type="text" th:field="*{city}" th:value="${city}"/> <br/>
+		
+		<br/>
+		
+		<input type="submit" value="Guardar" />
+	</form>
+	
+	<a href="#" th:href="@{/cancel}">Cancelar</a>
+	
+</body>
+</html>

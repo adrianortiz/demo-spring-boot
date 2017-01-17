@@ -32,10 +32,16 @@ public class ContactController {
 		return mav;
 	}
 	
-	@GetMapping("/new-contact")
-	public String redirectContactForm(Model model) {
-		model.addAttribute("contactModel", new ContactModel());
-		return "new-contact";
+	@GetMapping("/form-contact")
+	public String redirectContactForm(@RequestParam(name="id", required=false) int id,
+			Model model) {
+		
+		ContactModel contactModel = new ContactModel();
+		if(id != 0) {
+			contactModel = contactService.findContactModelById(id);
+		}
+		model.addAttribute("contactModel", contactModel);
+		return "form-contact";
 	}
 	
 	@GetMapping("/cancel")

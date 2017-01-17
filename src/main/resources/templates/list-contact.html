@@ -24,12 +24,12 @@
 			<td th:text="${contact.telephone}"></td>
 			<td th:text="${contact.city}"></td>
 			<td>
-				<a href="#">Editar</a>
+				<a href="#" th:href="@{/form-contact?id=__${contact.id}__}">Editar</a>
 				<a href="#" th:href="@{/remove-contact?id=__${contact.id}__}">Eliminar</a>
 			</td>
 		</tr>
 	</table>
 	
-	<a href="#" th:href="@{/new-contact}" >Nuevo contacto</a>
+	<a href="#" th:href="@{/form-contact?id=0}" >Nuevo contacto</a>
 </body>
 </html>
