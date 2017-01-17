@@ -25,7 +25,7 @@
 			<td th:text="${contact.city}"></td>
 			<td>
 				<a href="#">Editar</a>
-				<a href="#">Eliminar</a>
+				<a href="#" th:href="@{/remove-contact?id=__${contact.id}__}">Eliminar</a>
 			</td>
 		</tr>
 	</table>
