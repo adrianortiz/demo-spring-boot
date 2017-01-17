@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"/>
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>Listar contactos</h1>
+	
+	<div th:if="${result == 1}">Contacto Creado correctamente</div>
+	<div th:if="${result == 0}">Error al crear el contacto</div>
+	
+	<table>
+		<tr>
+			<td>First Name</td>
+			<td>Last Name</td>
+			<td>Telephone</td>
+			<td>City</td>
+			<td>Action</td>
+		</tr>
+		<tr th:each="contact : ${contacts}">
+			<td th:text="${contact.firstname}"></td>
+			<td th:text="${contact.lastname}"></td>
+			<td th:text="${contact.telephone}"></td>
+			<td th:text="${contact.city}"></td>
+			<td>
+				<a href="#">Editar</a>
+				<a href="#">Eliminar</a>
+			</td>
+		</tr>
+	</table>
+	
+	<a href="#" th:href="@{/new-contact}" >Nuevo contacto</a>
+</body>
+</html>
